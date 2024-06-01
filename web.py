@@ -84,6 +84,7 @@ def calculate_pinj(qinj, pres, T, kh, re, rw):
     return pinj
 
 # Streamlit app layout and input
+# Streamlit app layout and input
 st.title('Injection Pressure Calculator for Desired CO2 Injection Rate')
 st.header("**Input Parameters:**")
 with st.form(key='Parameters'):
@@ -103,8 +104,8 @@ with st.form(key='Parameters'):
     elif qinj1_unit == "Mt/year":
         qinj1_value *= 34.761636632 * 1000000 / 365
     
-    submitted = st.form_submit_button("Calculate Required Injection Pressure")
-    if submitted:
+    st.form_submit_button("Calculate Required Injection Pressure")
+    if st.form_submit_button("Calculate Required Injection Pressure"):
         st.write("Calculating...")  # Debug statement
         pw = calculate_pinj(qinj1_value, pres, T, kh, re_max, rw)
         st.write(f'The Required Injection Pressure (Psia): {pw:.2f}')
