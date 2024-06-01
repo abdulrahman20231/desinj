@@ -87,13 +87,13 @@ def calculate_pinj(qinj, pres, T, kh, re, rw):
 st.title('Injection Pressure Calculator for Desired CO2 Injection Rate')
 st.header("**Input Parameters:**")
 with st.form(key='Parameters'):
-    k = st.number_input('Enter Reservoir Permeability (md):', value=100.0, step=0.1)
-    h = st.number_input('Enter Reservoir Thickness (ft):', value=30.0, step=0.1)
+    k = st.number_input('Enter Reservoir Permeability (md):', value=300.0, step=0.1)
+    h = st.number_input('Enter Reservoir Thickness (ft):', value=300.0, step=0.1)
     kh = k * h
     pres = st.number_input('Enter Reservoir Pressure (Psia):', value=3000.0, step=0.1)
     T = st.number_input('Enter Reservoir Temperature (F):', value=165.0, step=0.1)
     rw = st.number_input('Enter Wellbore Radius (ft):', value=0.333, step=0.001)
-    re_max = st.number_input('Enter Reservoir Drainage Radius (ft):', value=550.0, step=0.1)
+    re_max = st.number_input('Enter Reservoir Drainage Radius (ft):', value=1000, step=0.1)
     qinj1_unit = st.selectbox("Select Injection Rate Unit", ["MSCF/D", "ton/day", "Mt/year"], index=0)
     qinj1_value = st.number_input('Enter Injection Rate:', value=3000.0, step=0.1)
     
