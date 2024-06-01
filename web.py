@@ -105,6 +105,6 @@ with st.form(key='Parameters'):
     
     submitted = st.form_submit_button("Calculate Required Injection Pressure")
     if submitted:
-    st.write("Calculating...")  # Debug statement
-    pw = calculate_pinj(qinj1_value, pres, T, kh, re_max, rw)
-    st.write(f'The Required Injection Pressure (Psia): {pw:.2f}')
+        st.write("Calculating...")  # Debug statement
+        pw = calculate_pinj(qinj1_value, pres, T, kh, re_max, rw)
+        st.write(f'The Required Injection Pressure (Psia): {pw:.2f}')
