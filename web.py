@@ -97,11 +97,11 @@ with st.form(key='Parameters'):
     qinj1_unit = st.selectbox("Select Injection Rate Unit", ["MSCF/D", "ton/day", "Mt/year"], index=0)
     qinj1_value = st.number_input('Enter Injection Rate:', value=3000.0, step=0.1)
     
-    # Convert injection rate based on unit selected
+    # Consistent conversion to MSCF/D
     if qinj1_unit == "ton/day":
-        qinj1_value *= 34.761636632 / 1000
+        qinj1_value = qinj1_value / 34.761636632 * 1000  # Convert ton/day to MSCF/D
     elif qinj1_unit == "Mt/year":
-        qinj1_value *= 34.761636632 * 1000000 / 365
+        qinj1_value = qinj1_value / (34.761636632 * 1000000 / 365)  # Convert Mt/year to MSCF/D
     
     submitted = st.form_submit_button("Calculate Required Injection Pressure")
     if submitted:
