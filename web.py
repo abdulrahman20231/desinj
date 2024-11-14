@@ -99,7 +99,7 @@ with st.form(key='Parameters'):
     
     # Consistent conversion to MSCF/D
     if qinj1_unit == "ton/day":
-        qinj1_value = qinj1_value /0.000365240099710547   # Convert ton/day to MSCF/D
+        qinj1_value = qinj1_value /0.052124939553975   # Convert ton/day to MSCF/D
     elif qinj1_unit == "Mt/year":
         qinj1_value = qinj1_value / 0.0000190381181201001    # Convert Mt/year to MSCF/D
     
